@@ -5,23 +5,21 @@
 template <typename T>
 class TPQueue {
  private:
-   struct node {
-    T data;
-     node *next;
-  };
+  struct node {
+   T data;
+   node *next;
+   };
    node *head;
 
  public:
-   TPQueue() : head (nullptr) {}
-  
+   TPQueue() : head(nullptr) {}
    ~TPQueue() {
-    while (head) {
+   while (head) {
       node *temp = head;
       head = head->next;
       delete temp;
     }
   }
-  
    bool isEmpty() { return head == nullptr;
   }
    
