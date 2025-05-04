@@ -42,7 +42,7 @@ class TPQueue {
   }
   T pop() {
   if (isEmpty()) {
-   throw std::string("Empty!");
+  throw std::string("Empty!");
   }
      T item = head->data;
     node *temp = head;
