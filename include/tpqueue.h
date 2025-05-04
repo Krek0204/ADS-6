@@ -6,24 +6,23 @@ template <typename T>
 class TPQueue {
  private:
   struct node {
-   T data;
-   node *next;
-   };
-   node *head;
+  T data;
+  node *next;
+  };
+  node *head;
 
  public:
-   TPQueue() : head(nullptr) {}
-   ~TPQueue() {
-   while (head) {
+  TPQueue() : head(nullptr) {}
+  ~TPQueue() {
+  while (head) {
       node *temp = head;
       head = head->next;
       delete temp;
     }
   }
-   bool isEmpty() { return head == nullptr;
+  bool isEmpty() { return head == nullptr;
   }
-   
-   void push(const T &item) {
+  void push(const T &item) {
      if (isEmpty() || item.prior > head->data.prior) {
        node *temp = head;
        head = new node;
@@ -41,14 +40,14 @@ class TPQueue {
      temp->data = item;
      temp->next = next_node;
   }
-   T pop() {
-    if (isEmpty()) throw std::string("Empty!");
+  T pop() {
+   if (isEmpty()) throw std::string("Empty!");
      T item = head->data;
     node *temp = head;
      head = head->next;
     delete temp;
      return item;
-   }
+  }
 };
 
 struct SYM {
