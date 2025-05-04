@@ -1,7 +1,7 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
-
+#include <string>
 template <typename T>
 class TPQueue {
  private:
@@ -12,7 +12,7 @@ class TPQueue {
    node *head;
 
  public:
-   TPQueue() : head = nullptr {}
+   TPQueue() : head (nullptr) {}
   
    ~TPQueue() {
     while (head) {
@@ -43,7 +43,7 @@ class TPQueue {
      temp->data = item;
      temp->next = next_node;
   }
-   void pop() {
+   T pop() {
     if (isEmpty()) throw std::string("Empty!");
      T item = head->data;
     node *temp = head;
